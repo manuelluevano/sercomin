@@ -80,6 +80,34 @@ a {
   color: #ffffff;
 }
 
+.nav-shell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  width: 20px;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+  border-radius: 999px;
+}
+
 .socials {
   display: flex;
   gap: 0.8rem;
@@ -221,10 +249,27 @@ a {
     gap: 0.8rem;
   }
 
+  .nav-shell {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
   .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 0.9rem 1rem;
+  }
+
+  .nav.nav-open {
+    display: flex;
   }
 
   .socials {
