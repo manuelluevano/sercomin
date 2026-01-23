@@ -18,6 +18,9 @@ import retorno2 from "../assets/PRODUCTOS/RodilloRetorno/RodilloRetorno2.png";
 import polea1 from "../assets/PRODUCTOS/Polea Motriz/poleaMotriz.png";
 import polea2 from "../assets/PRODUCTOS/Polea Motriz/poleaMotriz2.png";
 import polea3 from "../assets/PRODUCTOS/Polea Motriz/poleaMotriz3.png";
+import poleaEspecial1 from "../assets/PRODUCTOS/POLEA ESPECIAL/WhatsApp Image 2026-01-23 at 11.23.34.jpeg";
+import poleaEspecial2 from "../assets/PRODUCTOS/POLEA ESPECIAL/WhatsApp Image 2026-01-23 at 11.24.03.jpeg";
+import poleaEspecial3 from "../assets/PRODUCTOS/POLEA ESPECIAL/WhatsApp Image 2026-01-23 at 11.24.04.jpeg";
 
 type Product = {
   name: string;
@@ -60,6 +63,12 @@ const products: Product[] = [
     description:
       "Poleas robustas para traccion constante, listas para integrarse en lineas de produccion.",
     images: [polea1, polea2, polea3],
+    category: "poleas",
+  },
+  {
+    name: "Polea especial",
+    description: "Fabricacion de poleas especiales para requerimientos a medida.",
+    images: [poleaEspecial1, poleaEspecial2, poleaEspecial3],
     category: "poleas",
   },
 ];
