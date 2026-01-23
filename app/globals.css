@@ -298,6 +298,14 @@ a {
     display: flex;
   }
 
+  .nav a {
+    color: var(--brand-dark);
+  }
+
+  .nav a.is-active {
+    color: var(--brand-dark);
+  }
+
   .nav a::after {
     background: var(--brand);
   }
