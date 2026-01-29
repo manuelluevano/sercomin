@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sercomin</title>
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        if (!path.endsWith("/") && !path.includes(".")) {
+          window.location.replace(path + "/" + window.location.search + window.location.hash);
+          return;
+        }
+        window.location.replace("/" + window.location.search + window.location.hash);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
