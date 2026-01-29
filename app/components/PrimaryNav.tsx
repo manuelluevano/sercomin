@@ -6,9 +6,9 @@ import { useState } from "react";
 
 const links = [
   { href: "/", label: "Inicio" },
-  { href: "/productos", label: "Productos" },
-  { href: "/contacto", label: "Contacto" },
-  { href: "/sobre-nosotros", label: "Sobre nosotros" },
+  { href: "/productos/", label: "Productos" },
+  { href: "/contacto/", label: "Contacto" },
+  { href: "/sobre-nosotros/", label: "Sobre nosotros" },
 ];
 
 export default function PrimaryNav() {
