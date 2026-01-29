@@ -75,10 +75,12 @@ const products: Product[] = [
 
 function ProductCard({
   product,
+  productIndex,
   onImageClick,
 }: {
   product: Product;
-  onImageClick: (image: StaticImageData, label: string) => void;
+  productIndex: number;
+  onImageClick: (productIndex: number, imageIndex: number) => void;
 }) {
   const whatsappNumber = "523312423096";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -90,7 +92,7 @@ function ProductCard({
       <button
         className={styles.heroImage}
         type="button"
-        onClick={() => onImageClick(product.images[0], product.name)}
+        onClick={() => onImageClick(productIndex, 0)}
       >
         <Image
           src={product.images[0]}
@@ -106,7 +108,7 @@ function ProductCard({
             className={styles.thumbnail}
             type="button"
             key={`${product.name}-thumb-${index}`}
-            onClick={() => onImageClick(image, product.name)}
+            onClick={() => onImageClick(productIndex, index)}
           >
             <Image
               src={image}
@@ -142,8 +144,8 @@ function ProductCard({
 
 export default function Productos() {
   const [lightbox, setLightbox] = useState<{
-    image: StaticImageData;
-    label: string;
+    productIndex: number;
+    imageIndex: number;
   } | null>(null);
   const [filter, setFilter] = useState<"todos" | Product["category"]>("todos");
 
@@ -151,6 +153,26 @@ export default function Productos() {
     if (filter === "todos") return products;
     return products.filter((product) => product.category === filter);
   }, [filter]);
+
+  const activeProduct = lightbox ? products[lightbox.productIndex] : null;
+  const activeImage =
+    activeProduct && lightbox ? activeProduct.images[lightbox.imageIndex] : null;
+
+  const goToPreviousImage = () => {
+    if (!lightbox) return;
+    const product = products[lightbox.productIndex];
+    const lastIndex = product.images.length - 1;
+    const previousIndex = lightbox.imageIndex === 0 ? lastIndex : lightbox.imageIndex - 1;
+    setLightbox({ productIndex: lightbox.productIndex, imageIndex: previousIndex });
+  };
+
+  const goToNextImage = () => {
+    if (!lightbox) return;
+    const product = products[lightbox.productIndex];
+    const lastIndex = product.images.length - 1;
+    const nextIndex = lightbox.imageIndex === lastIndex ? 0 : lightbox.imageIndex + 1;
+    setLightbox({ productIndex: lightbox.productIndex, imageIndex: nextIndex });
+  };
 
   return (
     <section className={styles.page}>
@@ -200,34 +222,65 @@ export default function Productos() {
         </button>
       </div>
       <div className={styles.grid}>
-        {visibleProducts.map((product) => (
+        {visibleProducts.map((product) => {
+          const productIndex = products.findIndex((item) => item.name === product.name);
+          return (
           <ProductCard
             key={product.name}
             product={product}
-            onImageClick={(image, label) => setLightbox({ image, label })}
+            productIndex={productIndex}
+            onImageClick={(nextProductIndex, imageIndex) =>
+              setLightbox({ productIndex: nextProductIndex, imageIndex })
+            }
           />
-        ))}
+          );
+        })}
       </div>
-      {lightbox ? (
+      {lightbox && activeProduct && activeImage ? (
         <div
           className={styles.lightbox}
           role="dialog"
           aria-modal="true"
           onClick={() => setLightbox(null)}
         >
-          <button
+          <div
             className={styles.lightboxInner}
-            type="button"
             onClick={(event) => event.stopPropagation()}
           >
+            {activeProduct.images.length > 1 ? (
+              <>
+                <button
+                  className={`${styles.lightboxNav} ${styles.lightboxPrev}`}
+                  type="button"
+                  aria-label="Imagen anterior"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    goToPreviousImage();
+                  }}
+                >
+                  ‹
+                </button>
+                <button
+                  className={`${styles.lightboxNav} ${styles.lightboxNext}`}
+                  type="button"
+                  aria-label="Imagen siguiente"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    goToNextImage();
+                  }}
+                >
+                  ›
+                </button>
+              </>
+            ) : null}
             <Image
-              src={lightbox.image}
-              alt={lightbox.label}
+              src={activeImage}
+              alt={`${activeProduct.name} vista ${lightbox.imageIndex + 1}`}
               className={styles.lightboxImage}
               sizes="(max-width: 900px) 92vw, 900px"
               priority
             />
-          </button>
+          </div>
         </div>
       ) : null}
     </section>
