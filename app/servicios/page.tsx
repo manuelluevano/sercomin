@@ -8,7 +8,6 @@ import vulcanizadoCaliente1 from "./Vulcannizado/Vulcanizado en caliente/WhatsAp
 import vulcanizadoCaliente2 from "./Vulcannizado/Vulcanizado en caliente/WhatsApp Image 2026-01-30 at 11.04.34.jpeg";
 import vulcanizadoFrio1 from "./Vulcannizado/Vulcanizado en frio/vulcanizado-en-frio-1.jpg";
 import vulcanizadoFrio2 from "./Vulcannizado/Vulcanizado en frio/vulcanizado_en_frio.jpg";
-import vulcanizadoFrio3 from "./Vulcannizado/Vulcanizado en frio/78e95de1-a6b7-40a1-a221-41759580cbc9.png";
 
 type Service = {
   title: string;
@@ -31,7 +30,7 @@ const services: Service[] = [
     title: "Vulcanizado en frio",
     summary:
       "Empalmes y reparaciones con sistema de vulcanizado en frio, ideal para intervenciones rapidas y seguras en sitio.",
-    images: [vulcanizadoFrio1, vulcanizadoFrio2, vulcanizadoFrio3],
+    images: [vulcanizadoFrio1, vulcanizadoFrio2],
     tag: "Bandas transportadoras",
     whatsappText: "Hola, quiero informacion sobre el servicio de vulcanizado en frio.",
   },
