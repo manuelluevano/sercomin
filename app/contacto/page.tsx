@@ -1,16 +1,17 @@
+import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
+import SectionHeader from "../components/ui/SectionHeader";
 import styles from "./page.module.css";
 
 export default function Contacto() {
   return (
     <section className={styles.page}>
-      <header className={styles.header}>
-        <p className={styles.kicker}>Contacto</p>
-        <h1 className={styles.title}>Nuestra ubicacion</h1>
-        <p className={styles.subtitle}>
-          Encuentranos en Google Maps para coordinar una visita.
-        </p>
-      </header>
-      <div className={styles.mapCard}>
+      <SectionHeader
+        kicker="Contacto"
+        title="Nuestra ubicacion"
+        subtitle="Encuentranos en Google Maps para coordinar una visita."
+      />
+      <Card className={styles.mapCard} variant="elevated" padding="sm">
         <div className={styles.mapFrame}>
           <iframe
             title="Ubicacion del taller Sercomin"
@@ -20,16 +21,16 @@ export default function Contacto() {
             allowFullScreen
           />
         </div>
-        <a
-          className={styles.mapLink}
+        <Button
           href="https://maps.app.goo.gl/NYiwc8ha7i7aMJfc8"
-          target="_blank"
-          rel="noreferrer"
+          external
+          variant="outline"
+          size="sm"
         >
           Ver en Google Maps
-        </a>
-      </div>
-      <div className={styles.contactCard}>
+        </Button>
+      </Card>
+      <Card className={styles.contactCard} variant="elevated" padding="lg">
         <h2 className={styles.sectionTitle}>Datos de contacto</h2>
         <div className={styles.contactGrid}>
           <div>
@@ -41,7 +42,7 @@ export default function Contacto() {
             <p className={styles.value}>+52 33 2211 3344</p>
           </div>
         </div>
-      </div>
+      </Card>
     </section>
   );
 }

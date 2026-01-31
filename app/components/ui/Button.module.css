@@ -1,0 +1,94 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
+    color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 2px solid rgba(224, 122, 47, 0.55);
+  outline-offset: 2px;
+}
+
+.sm {
+  padding: 0.6rem 1.1rem;
+}
+
+.md {
+  padding: 0.75rem 1.6rem;
+}
+
+.lg {
+  padding: 0.95rem 2rem;
+  font-size: 0.8rem;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  color: #ffffff;
+  box-shadow: 0 16px 28px rgba(184, 90, 30, 0.28);
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(184, 90, 30, 0.35);
+}
+
+.outline {
+  background: #ffffff;
+  border-color: rgba(17, 17, 17, 0.18);
+  color: #1a1a1a;
+}
+
+.outline:hover {
+  border-color: rgba(17, 17, 17, 0.4);
+  transform: translateY(-2px);
+}
+
+.ghost {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: transparent;
+  color: #1a1a1a;
+}
+
+.ghost:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.dark {
+  background: #111111;
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.24);
+}
+
+.dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(17, 17, 17, 0.35);
+}
+
+.whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(37, 211, 102, 0.4);
+}
+
+.fullWidth {
+  width: 100%;
+}

@@ -1,0 +1,43 @@
+.header {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 760px;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.kicker {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #8b7d6c;
+  font-weight: 700;
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font-display), "Trebuchet MS", sans-serif;
+  font-size: clamp(2.1rem, 3.6vw, 3.4rem);
+  margin: 0;
+  color: #101010;
+}
+
+.subtitle {
+  max-width: 720px;
+  color: #4a4a4a;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.center .actions {
+  justify-content: center;
+}

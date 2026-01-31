@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "./components/ui/Button";
 
 export default function Home() {
   return (
@@ -11,12 +11,12 @@ export default function Home() {
           operacion en movimiento.
         </p>
         <div className="home-actions">
-          <Link className="home-cta" href="/productos/">
+          <Button href="/productos/" variant="primary">
             Ver productos
-          </Link>
-          <Link className="home-ghost" href="/contacto/">
+          </Button>
+          <Button href="/contacto/" variant="outline">
             Contacto
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

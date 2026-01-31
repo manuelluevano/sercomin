@@ -6,32 +6,6 @@
   gap: 2.5rem;
 }
 
-.header {
-  display: grid;
-  gap: 0.8rem;
-}
-
-.kicker {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--brand-dark);
-  font-weight: 700;
-}
-
-.title {
-  font-family: var(--font-heading), "Trebuchet MS", sans-serif;
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  margin: 0;
-}
-
-.subtitle {
-  max-width: 700px;
-  color: #585858;
-  line-height: 1.7;
-  margin: 0;
-}
-
 .grid {
   display: grid;
   gap: 2rem;
@@ -45,7 +19,7 @@
 }
 
 .filter {
-  border: 1px solid rgba(18, 18, 18, 0.18);
+  border: 1px solid var(--line);
   background: #ffffff;
   color: #2b2b2b;
   padding: 0.55rem 1.1rem;
@@ -77,11 +51,6 @@
 }
 
 .card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 1.6rem;
-  box-shadow: 0 16px 32px rgba(18, 18, 18, 0.1);
-  border: 1px solid rgba(18, 18, 18, 0.08);
   display: grid;
   gap: 1rem;
 }
@@ -90,39 +59,18 @@
   margin: 0 0 0.4rem;
   font-size: 1.1rem;
   font-weight: 700;
+  font-family: var(--font-display), "Trebuchet MS", sans-serif;
 }
 
 .cardCopy {
   margin: 0 0 0.8rem;
-  color: #5a5a5a;
+  color: var(--ink-muted);
   line-height: 1.6;
-}
-
-.whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.7rem 1.4rem;
-  border-radius: 999px;
-  background: #25d366;
-  color: #fff;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
-  gap: 0.5rem;
-}
-
-.whatsapp:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(37, 211, 102, 0.35);
 }
 
 .heroImage {
   border: none;
-  background: #f6f6f6;
+  background: #f2ede4;
   border-radius: 16px;
   padding: 0.6rem;
   cursor: pointer;
@@ -144,7 +92,7 @@
 }
 
 .thumbnail {
-  border: 1px solid rgba(18, 18, 18, 0.1);
+  border: 1px solid var(--line);
   background: #fff;
   border-radius: 12px;
   padding: 0.2rem 0.4rem;
@@ -172,7 +120,7 @@
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(8, 8, 8, 0.7);
+  background: rgba(8, 8, 8, 0.74);
   display: grid;
   place-items: center;
   padding: 1.5rem;
@@ -231,14 +179,6 @@
 @media (max-width: 720px) {
   .page {
     padding: 2rem 0 3rem;
-  }
-
-  .card {
-    padding: 1.6rem;
-  }
-
-  .cardHeader {
-    align-items: flex-start;
   }
 
   .lightboxNav {

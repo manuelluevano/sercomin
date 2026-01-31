@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "../components/ui/Button";
 
 export default function SobreNosotros() {
   return (
@@ -11,12 +11,12 @@ export default function SobreNosotros() {
           con enfoque en seguridad, durabilidad y tiempos de entrega confiables.
         </p>
         <div className="home-actions">
-          <Link className="home-cta" href="/productos/">
+          <Button href="/productos/" variant="primary">
             Ver catalogo
-          </Link>
-          <Link className="home-ghost" href="/contacto/">
+          </Button>
+          <Button href="/contacto/" variant="outline">
             Contacto
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

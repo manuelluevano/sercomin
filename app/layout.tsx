@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Cinzel, Manrope, Sora } from "next/font/google";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import logo from "./assets/logo.png";
 import PrimaryNav from "./components/PrimaryNav";
 import Footer from "./components/Footer";
 
-const display = Cinzel({
+const display = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const heading = Sora({
+const heading = Space_Grotesk({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const body = Manrope({

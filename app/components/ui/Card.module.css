@@ -1,0 +1,35 @@
+.card {
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.surface {
+  box-shadow: 0 14px 28px rgba(18, 18, 18, 0.08);
+}
+
+.elevated {
+  box-shadow: 0 20px 40px rgba(18, 18, 18, 0.12);
+}
+
+.soft {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(200, 190, 176, 0.7);
+  box-shadow: 0 18px 34px rgba(26, 22, 18, 0.1);
+}
+
+.none {
+  padding: 0;
+}
+
+.sm {
+  padding: 0.9rem;
+}
+
+.md {
+  padding: 1.4rem;
+}
+
+.lg {
+  padding: 1.8rem;
+}
