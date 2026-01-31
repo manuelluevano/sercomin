@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import styles from "./page.module.css";
@@ -126,7 +127,7 @@ export default function Servicios() {
           <article
             className={styles.card}
             key={service.title}
-            style={{ ["--delay" as const]: `${serviceIndex * 0.08}s` }}
+            style={{ "--delay": `${serviceIndex * 0.08}s` } as CSSProperties}
           >
             <div className={styles.cardHeader}>
               {service.tag ? (
