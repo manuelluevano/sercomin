@@ -2,7 +2,14 @@ import Link from "next/link";
 import type { MouseEventHandler, ReactNode } from "react";
 import styles from "./Button.module.css";
 
-type ButtonVariant = "primary" | "outline" | "ghost" | "dark" | "whatsapp";
+type ButtonVariant =
+  | "primary"
+  | "outline"
+  | "ghost"
+  | "dark"
+  | "whatsapp"
+  | "mercadolibre"
+  | "facebook";
 type ButtonSize = "sm" | "md" | "lg";
 
 type ButtonProps = {

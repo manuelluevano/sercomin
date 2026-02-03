@@ -111,6 +111,15 @@
   display: grid;
 }
 
+.cardLinks {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.cardPrimaryCta {
+  display: grid;
+}
+
 .whatsappIcon {
   width: 18px;
   height: 18px;

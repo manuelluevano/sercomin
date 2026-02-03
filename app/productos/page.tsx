@@ -36,6 +36,11 @@ type Product = {
   description: string;
   images: StaticImageData[];
   category: "banda" | "rodilleria" | "poleas" | "reductores";
+  links?: {
+    label: string;
+    href: string;
+    variant?: "primary" | "outline" | "ghost" | "dark" | "whatsapp";
+  }[];
 };
 
 const products: Product[] = [
@@ -73,6 +78,23 @@ const products: Product[] = [
       "Poleas robustas para traccion constante, listas para integrarse en lineas de produccion.",
     images: [polea1, polea2, polea3],
     category: "poleas",
+    links: [
+      {
+        label: "Comprar en Mercado Libre",
+        href: "https://www.mercadolibre.com.mx/polea-motriz-30-in--banda-transportadora/up/MLMU481965457",
+        variant: "mercadolibre",
+      },
+      {
+        label: "Ver video en TikTok",
+        href: "https://www.tiktok.com/@sercomin.mx/video/7393497420358880518?lang=en",
+        variant: "dark",
+      },
+      {
+        label: "Ver en Facebook Marketplace",
+        href: "https://www.facebook.com/marketplace/item/1415865553243832",
+        variant: "facebook",
+      },
+    ],
   },
   {
     name: "Polea especial",
@@ -139,16 +161,34 @@ function ProductCard({
         <h2 className={styles.cardTitle}>{product.name}</h2>
         <p className={styles.cardCopy}>{product.description}</p>
       </div>
-      <Button href={whatsappLink} external variant="whatsapp" size="sm" fullWidth>
-        <svg
-          className={styles.whatsappIcon}
-          viewBox="0 0 32 32"
-          aria-hidden="true"
-        >
-          <path d="M16.02 3C9.39 3 4 8.39 4 15.02c0 2.65.86 5.12 2.33 7.12L4 29l7.08-2.27a12 12 0 0 0 4.94 1.04h.01c6.63 0 12.02-5.39 12.02-12.02C28.05 8.39 22.65 3 16.02 3Zm0 2.4a9.62 9.62 0 0 1 9.63 9.62c0 5.3-4.33 9.62-9.63 9.62h-.01a9.5 9.5 0 0 1-4.54-1.15l-.62-.33-4.1 1.31 1.34-3.99-.4-.65a9.5 9.5 0 0 1-1.67-5.41A9.62 9.62 0 0 1 16.02 5.4Zm-2.78 5.7c-.24 0-.53.08-.8.38-.27.3-1.03 1-1.03 2.44s1.06 2.82 1.2 3.02c.14.2 2.05 3.28 5.08 4.47 2.52.99 3.04.79 3.59.74.55-.05 1.77-.73 2.02-1.44.25-.7.25-1.31.18-1.44-.07-.13-.27-.2-.56-.35-.3-.15-1.77-.88-2.05-.98-.27-.1-.47-.15-.66.15-.2.3-.76.98-.93 1.18-.17.2-.34.22-.64.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.46.13-.6.14-.14.3-.37.46-.56.15-.2.2-.33.3-.55.1-.23.05-.43-.02-.58-.08-.15-.66-1.6-.9-2.2-.24-.58-.48-.5-.66-.5Z" />
-        </svg>
-        Cotizar
-      </Button>
+      <div className={styles.cardPrimaryCta}>
+        <Button href={whatsappLink} external variant="whatsapp" size="lg" fullWidth>
+          <svg
+            className={styles.whatsappIcon}
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+          >
+            <path d="M16.02 3C9.39 3 4 8.39 4 15.02c0 2.65.86 5.12 2.33 7.12L4 29l7.08-2.27a12 12 0 0 0 4.94 1.04h.01c6.63 0 12.02-5.39 12.02-12.02C28.05 8.39 22.65 3 16.02 3Zm0 2.4a9.62 9.62 0 0 1 9.63 9.62c0 5.3-4.33 9.62-9.63 9.62h-.01a9.5 9.5 0 0 1-4.54-1.15l-.62-.33-4.1 1.31 1.34-3.99-.4-.65a9.5 9.5 0 0 1-1.67-5.41A9.62 9.62 0 0 1 16.02 5.4Zm-2.78 5.7c-.24 0-.53.08-.8.38-.27.3-1.03 1-1.03 2.44s1.06 2.82 1.2 3.02c.14.2 2.05 3.28 5.08 4.47 2.52.99 3.04.79 3.59.74.55-.05 1.77-.73 2.02-1.44.25-.7.25-1.31.18-1.44-.07-.13-.27-.2-.56-.35-.3-.15-1.77-.88-2.05-.98-.27-.1-.47-.15-.66.15-.2.3-.76.98-.93 1.18-.17.2-.34.22-.64.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.46.13-.6.14-.14.3-.37.46-.56.15-.2.2-.33.3-.55.1-.23.05-.43-.02-.58-.08-.15-.66-1.6-.9-2.2-.24-.58-.48-.5-.66-.5Z" />
+          </svg>
+          Cotizar por WhatsApp
+        </Button>
+      </div>
+      {product.links ? (
+        <div className={styles.cardLinks}>
+          {product.links.map((link) => (
+            <Button
+              key={link.href}
+              href={link.href}
+              external
+              variant={link.variant ?? "outline"}
+              size="sm"
+              fullWidth
+            >
+              {link.label}
+            </Button>
+          ))}
+        </div>
+      ) : null}
     </Card>
   );
 }

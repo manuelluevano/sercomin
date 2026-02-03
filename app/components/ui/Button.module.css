@@ -89,6 +89,29 @@
   box-shadow: 0 14px 28px rgba(37, 211, 102, 0.4);
 }
 
+.mercadolibre {
+  background: #ffe600;
+  color: #111111;
+  box-shadow: 0 12px 24px rgba(255, 230, 0, 0.35);
+  border: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.mercadolibre:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(255, 230, 0, 0.5);
+}
+
+.facebook {
+  background: #1877f2;
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(24, 119, 242, 0.3);
+}
+
+.facebook:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(24, 119, 242, 0.45);
+}
+
 .fullWidth {
   width: 100%;
 }
