@@ -24,12 +24,18 @@ import polea3 from "../assets/PRODUCTOS/Polea Motriz/poleaMotriz3.png";
 import poleaEspecial1 from "../assets/PRODUCTOS/POLEA ESPECIAL/WhatsApp Image 2026-01-23 at 11.23.34.jpeg";
 import poleaEspecial2 from "../assets/PRODUCTOS/POLEA ESPECIAL/WhatsApp Image 2026-01-23 at 11.24.03.jpeg";
 import poleaEspecial3 from "../assets/PRODUCTOS/POLEA ESPECIAL/WhatsApp Image 2026-01-23 at 11.24.04.jpeg";
+import reductor1 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 at 12.45.44.jpeg";
+import reductor2 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 at 12.45.44 (1).jpeg";
+import reductor3 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 at 12.45.44 (2).jpeg";
+import reductor4 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 at 12.45.45.jpeg";
+import reductor5 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 at 12.45.58.jpeg";
+import reductor6 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 at 12.45.58 (1).jpeg";
 
 type Product = {
   name: string;
   description: string;
   images: StaticImageData[];
-  category: "banda" | "rodilleria" | "poleas";
+  category: "banda" | "rodilleria" | "poleas" | "reductores";
 };
 
 const products: Product[] = [
@@ -73,6 +79,13 @@ const products: Product[] = [
     description: "Fabricacion de poleas especiales para requerimientos a medida.",
     images: [poleaEspecial1, poleaEspecial2, poleaEspecial3],
     category: "poleas",
+  },
+  {
+    name: "Reductor usado",
+    description:
+      "Reductores industriales usados en excelente estado, listos para integrarse y prolongar la vida de tus equipos.",
+    images: [reductor5, reductor1, reductor2, reductor3, reductor4, reductor6],
+    category: "reductores",
   },
 ];
 
@@ -213,6 +226,16 @@ export default function Productos() {
           aria-pressed={filter === "poleas"}
         >
           Poleas
+        </button>
+        <button
+          className={
+            filter === "reductores" ? styles.filterActive : styles.filter
+          }
+          type="button"
+          onClick={() => setFilter("reductores")}
+          aria-pressed={filter === "reductores"}
+        >
+          Reductores
         </button>
       </div>
       <div className={styles.grid}>

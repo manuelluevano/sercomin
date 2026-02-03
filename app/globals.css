@@ -1,12 +1,12 @@
 :root {
   color-scheme: light;
-  --ink: #111111;
-  --ink-muted: #4a4a4a;
+  --ink: #0f1113;
+  --ink-muted: #495057;
   --brand: #e07a2f;
   --brand-dark: #b85a1e;
-  --paper: #f7f4ef;
+  --paper: #eef1f4;
   --surface: #ffffff;
-  --line: rgba(17, 17, 17, 0.08);
+  --line: rgba(15, 17, 19, 0.12);
 }
 
 * {
@@ -17,9 +17,11 @@ html,
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at 20% 0%, #fff7ef 0%, transparent 55%),
-    radial-gradient(circle at 80% 10%, #eef2f6 0%, transparent 50%),
+  background: radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.9) 0%, transparent 40%),
+    linear-gradient(0deg, rgba(15, 17, 19, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 17, 19, 0.045) 1px, transparent 1px),
     var(--paper);
+  background-size: auto, 72px 72px, 72px 72px, auto;
   color: var(--ink);
   font-family: var(--font-body), "Trebuchet MS", sans-serif;
 }
@@ -47,6 +49,7 @@ a {
   background: var(--brand);
   border-bottom: 2px solid var(--brand-dark);
   backdrop-filter: none;
+  box-shadow: 0 10px 24px rgba(12, 12, 12, 0.18);
 }
 
 .header-inner {
@@ -83,7 +86,7 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.85rem;
+  font-size: 13px;
   color: #ffffff;
 }
 
@@ -311,7 +314,27 @@ a {
   color: rgba(255, 255, 255, 0.85);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1024px) {
+  .wrap {
+    width: min(1120px, 100% - 2rem);
+  }
+
+  .header-inner {
+    padding: 0.85rem 0;
+  }
+
+  .nav {
+    gap: 1.2rem;
+    font-size: 12px;
+  }
+
+  .home-hero,
+  .about-section {
+    padding: 4rem 0 3.5rem;
+  }
+}
+
+@media (max-width: 900px) {
   .header-inner {
     flex-direction: column;
     gap: 0.8rem;

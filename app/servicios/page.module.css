@@ -254,6 +254,10 @@
 }
 
 @media (max-width: 900px) {
+  .page {
+    padding: 96px 24px 96px;
+  }
+
   .card {
     grid-template-columns: 1fr;
   }
