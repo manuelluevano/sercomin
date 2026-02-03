@@ -39,7 +39,14 @@ type Product = {
   links?: {
     label: string;
     href: string;
-    variant?: "primary" | "outline" | "ghost" | "dark" | "whatsapp";
+    variant?:
+      | "primary"
+      | "outline"
+      | "ghost"
+      | "dark"
+      | "whatsapp"
+      | "mercadolibre"
+      | "facebook";
   }[];
 };
 
