@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import logo from "./assets/logo.png";
+import mercadoLogo from "./assets/logo-mercado.webp";
 import PrimaryNav from "./components/PrimaryNav";
 import Footer from "./components/Footer";
 
@@ -97,6 +98,14 @@ export default function RootLayout({
                     <path d="M6.6 2.9c.3-.3.7-.4 1.1-.3l2.8.9c.4.1.7.4.8.8l.6 2.6c.1.4 0 .8-.3 1.1l-1.6 1.6c1 1.9 2.5 3.4 4.4 4.4l1.6-1.6c.3-.3.7-.4 1.1-.3l2.6.6c.4.1.7.4.8.8l.9 2.8c.1.4 0 .8-.3 1.1l-1.4 1.4c-.4.4-1 .6-1.6.5-7.4-1.1-13.2-6.9-14.3-14.3-.1-.6.1-1.2.5-1.6L6.6 2.9Z" />
                   </svg>
                 </a>
+              </div>
+              <div className="header-store" aria-label="Tienda">
+                <span className="header-store-title">Visita nuestra tienda</span>
+                <Image
+                  src={mercadoLogo}
+                  alt="Mercado Libre"
+                  className="header-store-logo"
+                />
               </div>
             </div>
           </header>

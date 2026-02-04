@@ -88,6 +88,7 @@ a {
   letter-spacing: 0.08em;
   font-size: 13px;
   color: #ffffff;
+  align-items: center;
 }
 
 .nav-shell {
@@ -142,6 +143,33 @@ a {
 .nav-socials {
   display: none;
   margin-top: 0.8rem;
+}
+
+.header-store {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.header-store-title {
+  margin: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.header-store-logo {
+  width: 96px;
+  height: auto;
+  display: block;
 }
 
 .socials a {
@@ -328,6 +356,10 @@ a {
     font-size: 12px;
   }
 
+  .header-store-logo {
+    width: 88px;
+  }
+
   .home-hero,
   .about-section {
     padding: 4rem 0 3.5rem;
@@ -379,6 +411,10 @@ a {
 
   .nav a::after {
     background: var(--brand);
+  }
+
+  .header-store {
+    display: none;
   }
 
   .socials {

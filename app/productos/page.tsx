@@ -30,12 +30,31 @@ import reductor3 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 
 import reductor4 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 at 12.45.45.jpeg";
 import reductor5 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 at 12.45.58.jpeg";
 import reductor6 from "../assets/PRODUCTOS/reductores/WhatsApp Image 2026-01-31 at 12.45.58 (1).jpeg";
+import chumaceraTensora1 from "../assets/PRODUCTOS/chumaceras/tensora/chumaceratensora.webp";
+import chumaceraTensora2 from "../assets/PRODUCTOS/chumaceras/tensora/chumaceratensora2.webp";
+import chumaceraPared2Tornillos1 from "../assets/PRODUCTOS/chumaceras/pared/2 tornillos/chumacera2torinilos.webp";
+import chumaceraPared2Tornillos2 from "../assets/PRODUCTOS/chumaceras/pared/2 tornillos/chumacerapared2tornillos.webp";
+import chumaceraPared4Tornillos1 from "../assets/PRODUCTOS/chumaceras/pared/4 tornillos/chumacerapared.webp";
+import chumaceraPared4Tornillos2 from "../assets/PRODUCTOS/chumaceras/pared/4 tornillos/chumacerapared2.webp";
+import chumaceraPared4Tornillos3 from "../assets/PRODUCTOS/chumaceras/pared/4 tornillos/chumacerapared3.webp";
+import chumaceraPiso1 from "../assets/PRODUCTOS/chumaceras/piso/chumacera.webp";
+import chumaceraPiso2 from "../assets/PRODUCTOS/chumaceras/piso/chumacera2.webp";
+import chumaceraPiso3 from "../assets/PRODUCTOS/chumaceras/piso/chumacera3.webp";
+import grapa1 from "../assets/PRODUCTOS/grapa/grapa.webp";
+import grapa2 from "../assets/PRODUCTOS/grapa/grapa2.webp";
+import grapa3 from "../assets/PRODUCTOS/grapa/grapa3.webp";
 
 type Product = {
   name: string;
   description: string;
   images: StaticImageData[];
-  category: "banda" | "rodilleria" | "poleas" | "reductores";
+  category:
+    | "banda"
+    | "rodilleria"
+    | "poleas"
+    | "reductores"
+    | "chumaceras"
+    | "grapas";
   links?: {
     label: string;
     href: string;
@@ -66,6 +85,13 @@ const products: Product[] = [
     category: "poleas",
   },
   {
+    name: "Grapa mecanica para banda",
+    description:
+      "Grapa mecanica para union y reparacion de bandas transportadoras. Caja con 25 juegos de placas, tornillos y tuercas.",
+    images: [grapa1, grapa2, grapa3],
+    category: "grapas",
+  },
+  {
     name: "Rodillo triple de carga",
     description:
       "Diseño de soporte pesado para transporte de mineral y agregados, con alineacion precisa.",
@@ -87,19 +113,9 @@ const products: Product[] = [
     category: "poleas",
     links: [
       {
-        label: "Comprar en Mercado Libre",
-        href: "https://www.mercadolibre.com.mx/polea-motriz-30-in--banda-transportadora/up/MLMU481965457",
-        variant: "mercadolibre",
-      },
-      {
         label: "Ver video en TikTok",
         href: "https://www.tiktok.com/@sercomin.mx/video/7393497420358880518?lang=en",
         variant: "dark",
-      },
-      {
-        label: "Ver en Facebook Marketplace",
-        href: "https://www.facebook.com/marketplace/item/1415865553243832",
-        variant: "facebook",
       },
     ],
   },
@@ -115,6 +131,38 @@ const products: Product[] = [
       "Reductores industriales usados en excelente estado, listos para integrarse y prolongar la vida de tus equipos.",
     images: [reductor5, reductor1, reductor2, reductor3, reductor4, reductor6],
     category: "reductores",
+  },
+  {
+    name: "Chumacera tensora",
+    description:
+      "Soporte para ajuste de tension en bandas y transmisiones, facilita el alineado y reduce vibracion.",
+    images: [chumaceraTensora1, chumaceraTensora2],
+    category: "chumaceras",
+  },
+  {
+    name: "Chumacera de pared 2 tornillos",
+    description:
+      "Montaje compacto para ejes ligeros, con fijacion rapida y estable en superficies verticales.",
+    images: [chumaceraPared2Tornillos1, chumaceraPared2Tornillos2],
+    category: "chumaceras",
+  },
+  {
+    name: "Chumacera de pared 4 tornillos",
+    description:
+      "Soporte reforzado para cargas mayores, brinda estabilidad y vida util extendida en instalaciones industriales.",
+    images: [
+      chumaceraPared4Tornillos1,
+      chumaceraPared4Tornillos2,
+      chumaceraPared4Tornillos3,
+    ],
+    category: "chumaceras",
+  },
+  {
+    name: "Chumacera de piso",
+    description:
+      "Base robusta para ejes y rodamientos, ideal para equipos con cargas radiales y uso continuo.",
+    images: [chumaceraPiso1, chumaceraPiso2, chumaceraPiso3],
+    category: "chumaceras",
   },
 ];
 
@@ -167,6 +215,7 @@ function ProductCard({
       <div className={styles.cardBody}>
         <h2 className={styles.cardTitle}>{product.name}</h2>
         <p className={styles.cardCopy}>{product.description}</p>
+        <p className={styles.cardMeta}>Medidas disponibles: a solicitud.</p>
       </div>
       <div className={styles.cardPrimaryCta}>
         <Button href={whatsappLink} external variant="whatsapp" size="lg" fullWidth>
@@ -239,6 +288,10 @@ export default function Productos() {
         title="Catalogo de productos"
         subtitle="Equipos y componentes listos para operar en entornos exigentes. Diseñados para reducir paros, mejorar la eficiencia y mantener la produccion en movimiento."
       />
+      <p className={styles.measureNote}>
+        Fabricamos y surtimos en multiples medidas segun tu banda (ej. 24&quot;, 30&quot;,
+        36&quot;). Comparte tu medida y te cotizamos la opcion correcta.
+      </p>
       <div className={styles.filters} role="tablist" aria-label="Filtros">
         <button
           className={filter === "todos" ? styles.filterActive : styles.filter}
@@ -283,6 +336,24 @@ export default function Productos() {
           aria-pressed={filter === "reductores"}
         >
           Reductores
+        </button>
+        <button
+          className={
+            filter === "chumaceras" ? styles.filterActive : styles.filter
+          }
+          type="button"
+          onClick={() => setFilter("chumaceras")}
+          aria-pressed={filter === "chumaceras"}
+        >
+          Chumaceras
+        </button>
+        <button
+          className={filter === "grapas" ? styles.filterActive : styles.filter}
+          type="button"
+          onClick={() => setFilter("grapas")}
+          aria-pressed={filter === "grapas"}
+        >
+          Grapas
         </button>
       </div>
       <div className={styles.grid}>
