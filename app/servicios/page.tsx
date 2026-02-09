@@ -17,6 +17,13 @@ import paileria1 from "./fabricacion_paileria/WhatsApp Image 2026-01-30 at 12.40
 import paileria2 from "./fabricacion_paileria/WhatsApp Image 2026-01-30 at 12.40.36 (1).jpeg";
 import paileria3 from "./fabricacion_paileria/WhatsApp Image 2026-01-30 at 12.40.36 (2).jpeg";
 import paileria4 from "./fabricacion_paileria/WhatsApp Image 2026-01-30 at 12.40.36 (3).jpeg";
+import botoneraDanada from "../assets/SERVICIOS/reparacion botonera pantalla metso/botoneraDanada.jpeg";
+import reparada from "../assets/SERVICIOS/reparacion botonera pantalla metso/reparada.jpg";
+import metsoModulo1 from "../assets/SERVICIOS/reparacion modulo/1.jpeg";
+import metsoModulo2 from "../assets/SERVICIOS/reparacion modulo/2.jpeg";
+import metsoModulo3 from "../assets/SERVICIOS/reparacion modulo/3.jpeg";
+import metsoModulo4 from "../assets/SERVICIOS/reparacion modulo/4.jpeg";
+import metsoModulo5 from "../assets/SERVICIOS/reparacion modulo/5.png";
 
 type MediaItem =
   | {
@@ -37,6 +44,7 @@ type Service = {
   media: MediaItem[];
   tag?: string;
   whatsappText: string;
+  category: "vulcanizado" | "fabricacion" | "reacondicionamiento" | "filtracion";
 };
 
 const services: Service[] = [
@@ -50,6 +58,7 @@ const services: Service[] = [
     ],
     tag: "Bandas transportadoras",
     whatsappText: "Hola, quiero informacion sobre el servicio de vulcanizado en caliente.",
+    category: "vulcanizado",
   },
   {
     title: "Vulcanizado en frio",
@@ -61,6 +70,7 @@ const services: Service[] = [
     ],
     tag: "Bandas transportadoras",
     whatsappText: "Hola, quiero informacion sobre el servicio de vulcanizado en frio.",
+    category: "vulcanizado",
   },
   {
     title: "Sistema de filtracion y limpieza hidraulica",
@@ -78,6 +88,7 @@ const services: Service[] = [
     tag: "Sistemas hidraulicos",
     whatsappText:
       "Hola, quiero informacion sobre el servicio de sistema de filtracion y limpieza hidraulica.",
+    category: "filtracion",
   },
   {
     title: "Fabricacion de paileria",
@@ -92,6 +103,36 @@ const services: Service[] = [
     tag: "Fabricacion metalica",
     whatsappText:
       "Hola, quiero informacion sobre el servicio de fabricacion de paileria.",
+    category: "fabricacion",
+  },
+  {
+    title: "Reacondicionamiento Teclado para Maquinas METSO",
+    summary:
+      "Sustitucion del teclado de un display de una trituradora Metso. Nuestro departamento tecnico especializado en trituracion puede sustituir teclados danados en todo tipo de pantallas y displays de trituradoras moviles Metso.",
+    media: [
+      { type: "image", src: botoneraDanada },
+      { type: "image", src: reparada },
+    ],
+    tag: "Trituracion",
+    whatsappText:
+      "Hola, quiero informacion sobre el servicio de reacondicionamiento de teclado para maquinas Metso.",
+    category: "reacondicionamiento",
+  },
+  {
+    title: "Reparacion de display METSO",
+    summary:
+      "Reparacion de modulo de display Metso con sustitucion de teclado, pantalla y backlight para recuperar visibilidad y operacion confiable.",
+    media: [
+      { type: "image", src: metsoModulo1 },
+      { type: "image", src: metsoModulo2 },
+      { type: "image", src: metsoModulo3 },
+      { type: "image", src: metsoModulo4 },
+      { type: "image", src: metsoModulo5 },
+    ],
+    tag: "Trituracion",
+    whatsappText:
+      "Hola, quiero informacion sobre el servicio de reparacion de display Metso.",
+    category: "reacondicionamiento",
   },
 ];
 
@@ -100,11 +141,16 @@ export default function Servicios() {
     serviceIndex: number;
     mediaIndex: number;
   } | null>(null);
+  const [filter, setFilter] = useState<"todos" | Service["category"]>("todos");
   const whatsappNumber = "523312423096";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     "Hola, quiero informacion sobre servicios de Sercomin.",
   )}`;
 
+  const visibleServices =
+    filter === "todos"
+      ? services
+      : services.filter((service) => service.category === filter);
   const activeService = lightbox ? services[lightbox.serviceIndex] : null;
   const activeMedia =
     activeService && lightbox ? activeService.media[lightbox.mediaIndex] : null;
@@ -122,13 +168,70 @@ export default function Servicios() {
         }
       />
 
+      <div className={styles.filters} role="tablist" aria-label="Filtros">
+        <button
+          className={filter === "todos" ? styles.filterActive : styles.filter}
+          type="button"
+          onClick={() => setFilter("todos")}
+          aria-pressed={filter === "todos"}
+        >
+          Todos
+        </button>
+        <button
+          className={
+            filter === "vulcanizado" ? styles.filterActive : styles.filter
+          }
+          type="button"
+          onClick={() => setFilter("vulcanizado")}
+          aria-pressed={filter === "vulcanizado"}
+        >
+          Vulcanizado
+        </button>
+        <button
+          className={
+            filter === "fabricacion" ? styles.filterActive : styles.filter
+          }
+          type="button"
+          onClick={() => setFilter("fabricacion")}
+          aria-pressed={filter === "fabricacion"}
+        >
+          Fabricacion de paileria
+        </button>
+        <button
+          className={
+            filter === "reacondicionamiento"
+              ? styles.filterActive
+              : styles.filter
+          }
+          type="button"
+          onClick={() => setFilter("reacondicionamiento")}
+          aria-pressed={filter === "reacondicionamiento"}
+        >
+          Reacondicionamiento METSO
+        </button>
+        <button
+          className={
+            filter === "filtracion" ? styles.filterActive : styles.filter
+          }
+          type="button"
+          onClick={() => setFilter("filtracion")}
+          aria-pressed={filter === "filtracion"}
+        >
+          Filtracion hidraulica
+        </button>
+      </div>
+
       <div className={styles.grid}>
-        {services.map((service, serviceIndex) => (
-          <article
-            className={styles.card}
-            key={service.title}
-            style={{ "--delay": `${serviceIndex * 0.08}s` } as CSSProperties}
-          >
+        {visibleServices.map((service, serviceIndex) => {
+          const originalIndex = services.findIndex(
+            (item) => item.title === service.title,
+          );
+          return (
+            <article
+              className={styles.card}
+              key={service.title}
+              style={{ "--delay": `${serviceIndex * 0.08}s` } as CSSProperties}
+            >
             <div className={styles.cardHeader}>
               {service.tag ? (
                 <span className={styles.tag}>{service.tag}</span>
@@ -145,7 +248,12 @@ export default function Servicios() {
                       className={styles.imageWrap}
                       type="button"
                       key={index}
-                      onClick={() => setLightbox({ serviceIndex, mediaIndex: index })}
+                      onClick={() =>
+                        setLightbox({
+                          serviceIndex: originalIndex,
+                          mediaIndex: index,
+                        })
+                      }
                     >
                       <div className={styles.videoThumb}>
                         <span className={styles.videoPlayIcon} aria-hidden="true" />
@@ -173,7 +281,12 @@ export default function Servicios() {
                     className={styles.imageWrap}
                     type="button"
                     key={index}
-                    onClick={() => setLightbox({ serviceIndex, mediaIndex: index })}
+                    onClick={() =>
+                      setLightbox({
+                        serviceIndex: originalIndex,
+                        mediaIndex: index,
+                      })
+                    }
                   >
                     <Image
                       src={item.src}
@@ -197,8 +310,9 @@ export default function Servicios() {
             >
               Cotizar por WhatsApp
             </Button>
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
 
       {lightbox && activeMedia ? (
