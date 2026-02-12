@@ -148,6 +148,8 @@ export default function Fabricacion() {
                     alt={`Transportador fabricado ${index + 1}`}
                     className={styles.slideImage}
                     sizes="100vw"
+                    quality={90}
+                    placeholder="blur"
                     priority={index === 0}
                   />
                 </button>

@@ -49,15 +49,15 @@
   position: relative;
   border-radius: 28px;
   overflow: hidden;
-  background: #0f1113;
+  background: #e8edf2;
   box-shadow: 0 35px 80px rgba(9, 10, 12, 0.35);
 }
 
 .carouselViewport {
   overflow: hidden;
-  background: #0f1113;
-  aspect-ratio: 20 / 9;
-  min-height: clamp(360px, 46vw, 680px);
+  background: linear-gradient(145deg, #eff3f7, #dfe6ec);
+  aspect-ratio: 16 / 10;
+  min-height: clamp(340px, 42vw, 640px);
 }
 
 .carouselTrack {
@@ -71,7 +71,7 @@
   height: 100%;
   display: grid;
   place-items: center;
-  background: #0f1113;
+  background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
@@ -80,7 +80,8 @@
 .slideImage {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -144,7 +145,7 @@
 }
 
 .dot {
-  background: rgba(126, 126, 127, 0);
+  background: rgba(126, 126, 127, 0.35);
 }
 
 .dotActive {

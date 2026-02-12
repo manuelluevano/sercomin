@@ -43,6 +43,13 @@ import chumaceraPiso3 from "../assets/PRODUCTOS/chumaceras/piso/chumacera3.webp"
 import grapa1 from "../assets/PRODUCTOS/grapa/grapa.webp";
 import grapa2 from "../assets/PRODUCTOS/grapa/grapa2.webp";
 import grapa3 from "../assets/PRODUCTOS/grapa/grapa3.webp";
+import hmi1 from "../assets/PRODUCTOS/modulos HMI/1.jpeg";
+import hmi2 from "../assets/PRODUCTOS/modulos HMI/2.jpeg";
+import hmi3 from "../assets/PRODUCTOS/modulos HMI/3.jpeg";
+import hmi4 from "../assets/PRODUCTOS/modulos HMI/4.jpeg";
+import hmi5 from "../assets/PRODUCTOS/modulos HMI/5.jpeg";
+import hmi6 from "../assets/PRODUCTOS/modulos HMI/6.jpeg";
+import hmi7 from "../assets/PRODUCTOS/modulos HMI/7.jpeg";
 
 type Product = {
   name: string;
@@ -54,7 +61,8 @@ type Product = {
     | "poleas"
     | "reductores"
     | "chumaceras"
-    | "grapas";
+    | "grapas"
+    | "hmi";
   links?: {
     label: string;
     href: string;
@@ -67,6 +75,16 @@ type Product = {
       | "mercadolibre"
       | "facebook";
   }[];
+};
+
+const categoryLabels: Record<Product["category"], string> = {
+  banda: "Banda transportadora",
+  rodilleria: "Rodilleria",
+  poleas: "Poleas",
+  reductores: "Reductores",
+  chumaceras: "Chumaceras",
+  grapas: "Grapas",
+  hmi: "Modulos HMI",
 };
 
 const products: Product[] = [
@@ -90,6 +108,12 @@ const products: Product[] = [
       "Grapa mecanica para union y reparacion de bandas transportadoras. Caja con 25 juegos de placas, tornillos y tuercas.",
     images: [grapa1, grapa2, grapa3],
     category: "grapas",
+  },
+  {
+    name: "Modulos HMI para maquinaria",
+    description: "Venta y reparacion de modulos HMI para maquinaria.",
+    images: [hmi1, hmi2, hmi3, hmi4, hmi5, hmi6, hmi7],
+    category: "hmi",
   },
   {
     name: "Rodillo triple de carga",
@@ -213,9 +237,14 @@ function ProductCard({
         ))}
       </div>
       <div className={styles.cardBody}>
+        <p className={styles.cardCategory}>{categoryLabels[product.category]}</p>
         <h2 className={styles.cardTitle}>{product.name}</h2>
         <p className={styles.cardCopy}>{product.description}</p>
-        <p className={styles.cardMeta}>Medidas disponibles: a solicitud.</p>
+        <p className={styles.cardMeta}>
+          {product.category === "hmi"
+            ? "Preguntanos por el modulo HMI compatible con tu maquina."
+            : "Manejamos distintas medidas segun tu equipo. Preguntanos la opcion ideal para tu maquina."}
+        </p>
       </div>
       <div className={styles.cardPrimaryCta}>
         <Button href={whatsappLink} external variant="whatsapp" size="lg" fullWidth>
@@ -283,15 +312,20 @@ export default function Productos() {
 
   return (
     <section className={styles.page}>
-      <SectionHeader
-        kicker="Maquinaria industrial"
-        title="Catalogo de productos"
-        subtitle="Equipos y componentes listos para operar en entornos exigentes. Diseñados para reducir paros, mejorar la eficiencia y mantener la produccion en movimiento."
-      />
-      <p className={styles.measureNote}>
-        Fabricamos y surtimos en multiples medidas segun tu banda (ej. 24&quot;, 30&quot;,
-        36&quot;). Comparte tu medida y te cotizamos la opcion correcta.
-      </p>
+      <div className={styles.heroPanel}>
+        <SectionHeader
+          kicker="Ingenieria y suministro industrial"
+          title="Portafolio de productos"
+          subtitle="Componentes y soluciones para transporte de material y mantenimiento de maquinaria. Enfocados en confiabilidad operativa, continuidad de proceso y desempe\u00f1o en campo."
+        />
+        <div className={styles.heroMetric}>
+          <span className={styles.heroMetricLabel}>Cobertura de atencion</span>
+          <strong className={styles.heroMetricValue}>Soporte tecnico especializado</strong>
+          <span className={styles.heroMetricHint}>
+            Venta, asesoria y rehabilitacion para aplicaciones industriales
+          </span>
+        </div>
+      </div>
       <div className={styles.filters} role="tablist" aria-label="Filtros">
         <button
           className={filter === "todos" ? styles.filterActive : styles.filter}
@@ -354,6 +388,14 @@ export default function Productos() {
           aria-pressed={filter === "grapas"}
         >
           Grapas
+        </button>
+        <button
+          className={filter === "hmi" ? styles.filterActive : styles.filter}
+          type="button"
+          onClick={() => setFilter("hmi")}
+          aria-pressed={filter === "hmi"}
+        >
+          Modulos HMI
         </button>
       </div>
       <div className={styles.grid}>
