@@ -1,0 +1,176 @@
+{
+  "base_folio": 202601210,
+  "last_folio": 202601226,
+  "history": [
+    {
+      "folio": "SRCM NO. 202601210",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-07",
+      "generated_at": "2026-04-07T19:41:52.713Z",
+      "item_count": 0,
+      "file_name": "cliente_SRCM_NO_202601210.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601211",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-07",
+      "generated_at": "2026-04-07T19:42:01.845Z",
+      "item_count": 1,
+      "file_name": "cliente_SRCM_NO_202601211.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601212",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-07",
+      "generated_at": "2026-04-07T19:47:46.366Z",
+      "item_count": 1,
+      "file_name": "cliente_SRCM_NO_202601212.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601213",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-07",
+      "generated_at": "2026-04-07T19:50:58.012Z",
+      "item_count": 0,
+      "file_name": "cliente_SRCM_NO_202601213.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601214",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-07",
+      "generated_at": "2026-04-07T19:54:38.515Z",
+      "item_count": 0,
+      "file_name": "cliente_SRCM_NO_202601214.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601215",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-07",
+      "generated_at": "2026-04-07T19:54:43.703Z",
+      "item_count": 0,
+      "file_name": "cliente_SRCM_NO_202601215.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601216",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T15:09:14.741Z",
+      "item_count": 1,
+      "file_name": "cliente_SRCM_NO_202601216.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601217",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T16:48:26.826Z",
+      "item_count": 1,
+      "file_name": "cliente_SRCM_NO_202601217.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601218",
+      "client_name": "Rodolfo Hernandez",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T16:48:59.497Z",
+      "item_count": 2,
+      "file_name": "Rodolfo_Hernandez_SRCM_NO_202601218.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601219",
+      "client_name": "Rodolfo Hernandez",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T16:50:12.998Z",
+      "item_count": 2,
+      "file_name": "Rodolfo_Hernandez_SRCM_NO_202601219.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601220",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T16:51:41.229Z",
+      "item_count": 2,
+      "file_name": "cliente_SRCM_NO_202601220.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601221",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T16:53:16.316Z",
+      "item_count": 2,
+      "file_name": "cliente_SRCM_NO_202601221.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601222",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T16:56:36.204Z",
+      "item_count": 1,
+      "file_name": "cliente_SRCM_NO_202601222.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601223",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T16:56:53.908Z",
+      "item_count": 3,
+      "file_name": "cliente_SRCM_NO_202601223.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601224",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T16:58:27.524Z",
+      "item_count": 2,
+      "file_name": "cliente_SRCM_NO_202601224.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601225",
+      "client_name": "",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T17:03:22.350Z",
+      "item_count": 2,
+      "file_name": "cliente_SRCM_NO_202601225.xlsx",
+      "file_type": "xlsx"
+    },
+    {
+      "folio": "SRCM NO. 202601226",
+      "client_name": "carlos martinez",
+      "worker_name": "Manuel Luevano",
+      "quote_date": "2026-04-08",
+      "generated_at": "2026-04-08T17:16:02.488Z",
+      "item_count": 2,
+      "file_name": "carlos_martinez_SRCM_NO_202601226.xlsx",
+      "file_type": "xlsx"
+    }
+  ]
+}

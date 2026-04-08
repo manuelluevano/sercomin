@@ -1,0 +1,74 @@
+[
+  {
+    "id": "rodilleria-triple-24",
+    "familia": "Rodilleria",
+    "serie": "Triple",
+    "medida": "24\"",
+    "descripcion": "Rodillo triple de carga para banda de 24” en 4 1/2” de diametro (20° o 35°)",
+    "numeroParte": "S/N",
+    "existencia": 20,
+    "entrega": "1/2 DIAS",
+    "precioUnitario": 2100,
+    "unidad": "PZ"
+  },
+  {
+    "id": "rodilleria-retorno-24",
+    "familia": "Rodilleria",
+    "serie": "Retorno",
+    "medida": "24\"",
+    "descripcion": "Rodillo de retorno para banda de 24” en 4 1/2” de diametro",
+    "numeroParte": "S/N",
+    "existencia": 20,
+    "entrega": "1/2 DIAS",
+    "precioUnitario": 890,
+    "unidad": "PZ"
+  },
+  {
+    "id": "rodilleria-triple-30",
+    "familia": "Rodilleria",
+    "serie": "Triple",
+    "medida": "30\"",
+    "descripcion": "Rodillo triple de carga para banda de 30” en 4 1/2” de diametro (20° o 35°)",
+    "numeroParte": "S/N",
+    "existencia": 20,
+    "entrega": "1/2 DIAS",
+    "precioUnitario": 2250,
+    "unidad": "PZ"
+  },
+  {
+    "id": "rodilleria-retorno-30",
+    "familia": "Rodilleria",
+    "serie": "Retorno",
+    "medida": "30\"",
+    "descripcion": "Rodillo de retorno para banda de 30” en 4 1/2” de diametro",
+    "numeroParte": "S/N",
+    "existencia": 20,
+    "entrega": "1/2 DIAS",
+    "precioUnitario": 1100,
+    "unidad": "PZ"
+  },
+  {
+    "id": "rodilleria-triple-36",
+    "familia": "Rodilleria",
+    "serie": "Triple",
+    "medida": "36\"",
+    "descripcion": "Rodillo triple de carga para banda de 36” en 4 1/2” de diametro (20° o 35°)",
+    "numeroParte": "S/N",
+    "existencia": 20,
+    "entrega": "1/2 DIAS",
+    "precioUnitario": 2400,
+    "unidad": "PZ"
+  },
+  {
+    "id": "rodilleria-retorno-36",
+    "familia": "Rodilleria",
+    "serie": "Retorno",
+    "medida": "36\"",
+    "descripcion": "Rodillo de retorno para banda de 36” en 4 1/2” de diametro",
+    "numeroParte": "S/N",
+    "existencia": 20,
+    "entrega": "1/2 DIAS",
+    "precioUnitario": 1400,
+    "unidad": "PZ"
+  }
+]

@@ -1,0 +1,650 @@
+.page {
+  width: min(1360px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 3.5rem 0 4.5rem;
+}
+
+.lockScreen {
+  min-height: calc(100vh - 180px);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.lockCard,
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 17, 19, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(15, 17, 19, 0.1);
+}
+
+.lockCard {
+  width: min(520px, 100%);
+  padding: 2rem;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.mobileWizard {
+  display: block;
+  width: min(960px, 100%);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.mobileStepHeader {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mobileStepLabel {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.mobileProgress {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.mobileProgressDot {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(15, 17, 19, 0.1);
+}
+
+.mobileProgressDotActive {
+  background: var(--brand);
+}
+
+.mobileStepContent {
+  display: grid;
+  gap: 1rem;
+}
+
+.mobileStepActions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.mobileItemsForce {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.documentMeta {
+  display: grid;
+  gap: 0.3rem;
+  justify-items: end;
+}
+
+.notesList {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+}
+
+.notesList p {
+  margin: 0;
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+}
+
+.title,
+.lockTitle {
+  margin: 0;
+  font-family: var(--font-display), "Trebuchet MS", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.copy,
+.lockCopy,
+.cardCopy,
+.helper {
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.copy,
+.lockCopy {
+  max-width: 62ch;
+  margin-top: 0.85rem;
+}
+
+.card {
+  padding: 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.cardHeader h2 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  background: rgba(224, 122, 47, 0.12);
+  color: var(--brand-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.lockForm,
+.fieldGrid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.fieldGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.field,
+.fieldWide {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.fieldWide {
+  grid-column: 1 / -1;
+}
+
+.fieldLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(15, 17, 19, 0.78);
+}
+
+.inlineError {
+  margin: 0.1rem 0 0;
+  font-size: 0.85rem;
+  color: #b42318;
+}
+
+.input,
+.select,
+.textarea,
+.tableInput {
+  width: 100%;
+  border: 1px solid rgba(15, 17, 19, 0.12);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  padding: 0.95rem 1rem;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus,
+.tableInput:focus {
+  outline: none;
+  border-color: rgba(224, 122, 47, 0.65);
+  box-shadow: 0 0 0 4px rgba(224, 122, 47, 0.12);
+}
+
+.input[readonly] {
+  background: rgba(238, 241, 244, 0.7);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.primaryButton,
+.secondaryButton,
+.tableAction {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 48px;
+  padding: 0.95rem 1.3rem;
+}
+
+.primaryButton {
+  background: var(--brand);
+  color: #fff;
+}
+
+.secondaryButton {
+  background: #111;
+  color: #fff;
+}
+
+.tableAction {
+  padding: 0.55rem 0.8rem;
+  background: rgba(15, 17, 19, 0.08);
+  color: var(--ink);
+}
+
+.primaryButton:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.snapshot {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.snapshot span {
+  display: block;
+  padding: 0.75rem 0.85rem;
+  border-radius: 14px;
+  background: rgba(238, 241, 244, 0.75);
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.card .primaryButton {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 17, 19, 0.08);
+}
+
+.mobileItems {
+  display: none;
+}
+
+.mobileItemCard {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid rgba(15, 17, 19, 0.08);
+  border-radius: 18px;
+  background: rgba(238, 241, 244, 0.55);
+}
+
+.mobileItemTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.mobileItemMeta {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+.table,
+.documentTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td,
+.documentTable th,
+.documentTable td {
+  border-bottom: 1px solid rgba(15, 17, 19, 0.08);
+  padding: 0.95rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.88rem;
+}
+
+.table th,
+.documentTable th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+.emptyState {
+  text-align: center;
+  color: var(--ink-muted);
+  padding: 1.5rem 1rem;
+}
+
+.previewCard {
+  position: sticky;
+  top: 100px;
+}
+
+.document {
+  background: #fff;
+  border: 1px solid rgba(15, 17, 19, 0.08);
+  border-radius: 20px;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.previewTableWrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.documentTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.documentLabel,
+.documentDate,
+.documentAttention,
+.notesBlock p,
+.signature p,
+.error {
+  margin: 0;
+}
+
+.documentLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--brand-dark);
+  font-weight: 800;
+}
+
+.documentNumber {
+  margin: 0.35rem 0 0;
+  font-size: 1.35rem;
+}
+
+.documentDate,
+.documentAttention {
+  color: var(--ink-muted);
+}
+
+.documentAttention {
+  margin-bottom: 1rem;
+}
+
+.totals {
+  width: min(360px, 100%);
+  margin-left: auto;
+  display: grid;
+  gap: 0.55rem;
+  padding-top: 1rem;
+}
+
+.totals div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 14px;
+  background: rgba(238, 241, 244, 0.8);
+}
+
+.notesBlock {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+}
+
+.signature {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.22rem;
+  justify-items: end;
+  text-align: right;
+}
+
+.summaryPanel {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  background: rgba(238, 241, 244, 0.72);
+}
+
+.summaryRow span {
+  color: var(--ink-muted);
+}
+
+.summaryTotals {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.35rem;
+}
+
+.summaryTotals div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  background: rgba(224, 122, 47, 0.08);
+}
+
+.error {
+  color: #b42318;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: rgba(180, 35, 24, 0.08);
+  border: 1px solid rgba(180, 35, 24, 0.16);
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .previewCard {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .page {
+    width: min(100% - 1rem, 100%);
+    padding: 1rem 0 2rem;
+  }
+
+  .mobileWizard {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .hero {
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+  }
+
+  .hero,
+  .documentTop,
+  .cardHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .documentMeta {
+    justify-items: start;
+  }
+
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .lockCard {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .copy,
+  .lockCopy {
+    font-size: 0.92rem;
+  }
+
+  .kicker {
+    font-size: 0.68rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .title,
+  .lockTitle {
+    font-size: 1.6rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mobileStepActions {
+    grid-template-columns: 1fr;
+  }
+
+  .snapshot {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .mobileItems {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .tableWrap {
+    display: none;
+  }
+
+  .mobileItemTop {
+    flex-direction: column;
+  }
+
+  .document {
+    padding: 1rem;
+  }
+
+  .previewTableWrap .table {
+    min-width: 560px;
+  }
+
+  .previewTableWrap .table th,
+  .previewTableWrap .table td {
+    padding: 0.7rem 0.55rem;
+    font-size: 0.8rem;
+  }
+
+  .totals {
+    width: 100%;
+  }
+
+  .summaryRow,
+  .summaryTotals div {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .notesList {
+    font-size: 0.86rem;
+  }
+
+  .signature {
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+@media print {
+  .page {
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero,
+  .controls,
+  .tableWrap,
+  .card > .cardHeader {
+    display: none;
+  }
+
+  .layout,
+  .previewColumn,
+  .previewCard,
+  .document {
+    display: block;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    background: #fff;
+  }
+}
