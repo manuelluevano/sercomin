@@ -76,6 +76,8 @@ export default function CotizadorInterno() {
   const [clientError, setClientError] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [mobileStep, setMobileStep] = useState<MobileStep>(1);
+  const [quantityDrafts, setQuantityDrafts] = useState<Record<string, string>>({});
+  const [selectedQuantityDraft, setSelectedQuantityDraft] = useState("1");
   const [family, setFamily] = useState<ProductFamily>(families[0]);
   const [seriesValue, setSeriesValue] = useState<ProductSeries>(series[0]);
   const [measure, setMeasure] = useState<ProductMeasure>(measures[0]);
@@ -170,20 +172,90 @@ export default function CotizadorInterno() {
     });
 
     setMobileStep(3);
+    setSelectedQuantity(1);
+    setSelectedQuantityDraft("1");
   }
 
-  function updateQuantity(id: string, cantidad: number) {
+  function updateSelectedQuantity(rawValue: string) {
+    const sanitizedValue = rawValue.replace(/[^\d]/g, "");
+    const normalizedValue = sanitizedValue.replace(/^0+(?=\d)/, "");
+
+    setSelectedQuantityDraft(normalizedValue);
+
+    if (normalizedValue.trim() === "") {
+      return;
+    }
+
+    const cantidad = Number(normalizedValue);
+    if (Number.isNaN(cantidad) || cantidad <= 0) {
+      return;
+    }
+
+    setSelectedQuantity(cantidad);
+  }
+
+  function commitSelectedQuantity() {
+    const cantidad = Number(selectedQuantityDraft);
+
+    if (!selectedQuantityDraft.trim() || Number.isNaN(cantidad) || cantidad <= 0) {
+      setSelectedQuantityDraft(String(selectedQuantity));
+      return;
+    }
+
+    setSelectedQuantity(cantidad);
+    setSelectedQuantityDraft(String(cantidad));
+  }
+
+  function updateQuantity(id: string, rawValue: string) {
+    const sanitizedValue = rawValue.replace(/[^\d]/g, "");
+    const normalizedValue = sanitizedValue.replace(/^0+(?=\d)/, "");
+
+    setQuantityDrafts((current) => ({ ...current, [id]: normalizedValue }));
+
+    if (normalizedValue.trim() === "") {
+      return;
+    }
+
+    const cantidad = Number(normalizedValue);
+    if (Number.isNaN(cantidad) || cantidad <= 0) {
+      return;
+    }
+
     setItems((current) =>
-      current
-        .map((item) =>
-          item.id === id ? { ...item, cantidad: Number.isNaN(cantidad) ? 0 : cantidad } : item
-        )
-        .filter((item) => item.cantidad > 0)
+      current.map((item) => (item.id === id ? { ...item, cantidad } : item))
     );
+  }
+
+  function commitQuantity(id: string) {
+    const draft = quantityDrafts[id];
+
+    if (draft === undefined) {
+      return;
+    }
+
+    const cantidad = Number(draft);
+    if (!draft.trim() || Number.isNaN(cantidad) || cantidad <= 0) {
+      const currentItem = items.find((item) => item.id === id);
+      setQuantityDrafts((current) => ({
+        ...current,
+        [id]: currentItem ? String(currentItem.cantidad) : "1",
+      }));
+      return;
+    }
+
+    setQuantityDrafts((current) => ({
+      ...current,
+      [id]: String(cantidad),
+    }));
   }
 
   function removeItem(id: string) {
     setItems((current) => current.filter((item) => item.id !== id));
+    setQuantityDrafts((current) => {
+      const next = { ...current };
+      delete next[id];
+      return next;
+    });
   }
 
   async function handleDownloadXlsx() {
@@ -422,10 +494,13 @@ export default function CotizadorInterno() {
                 <span className={styles.fieldLabel}>Cantidad</span>
                 <input
                   className={styles.input}
-                  type="number"
-                  min="1"
-                  value={selectedQuantity}
-                  onChange={(event) => setSelectedQuantity(Number(event.target.value))}
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  value={selectedQuantityDraft}
+                  onFocus={(event) => event.currentTarget.select()}
+                  onChange={(event) => updateSelectedQuantity(event.target.value)}
+                  onBlur={commitSelectedQuantity}
                 />
               </label>
               <div className={styles.snapshot}>
@@ -476,10 +551,13 @@ export default function CotizadorInterno() {
                       <span className={styles.fieldLabel}>Cantidad</span>
                       <input
                         className={styles.tableInput}
-                        type="number"
-                        min="0"
-                        value={item.cantidad}
-                        onChange={(event) => updateQuantity(item.id, Number(event.target.value))}
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        value={quantityDrafts[item.id] ?? String(item.cantidad)}
+                        onFocus={(event) => event.currentTarget.select()}
+                        onChange={(event) => updateQuantity(item.id, event.target.value)}
+                        onBlur={() => commitQuantity(item.id)}
                       />
                     </label>
                   </article>
